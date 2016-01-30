@@ -12,16 +12,25 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import android.content.Intent;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
+    ListView listView;
+    String[] values;
+    //ArrayList<Payment> values;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +40,30 @@ public class MainActivity extends AppCompatActivity {
 
         Button oMe = (Button) findViewById(R.id.button2);
         Button oYou = (Button) findViewById(R.id.button3);
+        listView = (ListView)findViewById(R.id.list);
+
+        //Defined Array values to show ListView
+        //setValue();
+        values = new String[]{"txt1", "txt2", "txt3", "txt4"};
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, android.R.id.text1, values);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+            //ListView Clicked item index
+            int itemPosition = position;
+
+            //ListView Clicked item value
+            String itemValue = (String)listView.getItemAtPosition(position);
+
+            //Show Alert
+            Toast.makeText(getApplicationContext(),"Position :" + itemPosition + " ListItem : "
+                    + itemValue, Toast.LENGTH_LONG).show();
+            }
+        });
 
         oMe.setOnClickListener(new View.OnClickListener() {
 
@@ -43,11 +76,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
         oYou.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view){
+            public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), OYouMaker.class);
                 startActivity(intent);
             }
         });
+
+    }
+
+    /*
+    public void setValue(){
+        values = new String[5];
+        for(int i = 0; i < values.length; i++){
+            values[i] = "value" + i;
+        }
+    }
+    */
+
+    public void addPayment(Payment newPayment){
 
     }
 /*
