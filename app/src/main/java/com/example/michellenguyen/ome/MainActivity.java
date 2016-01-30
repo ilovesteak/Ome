@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
 
         Button oMe = (Button) findViewById(R.id.button2);
         Button oYou = (Button) findViewById(R.id.button3);
@@ -76,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         oYou.setOnClickListener(new View.OnClickListener() {
+
+            /** Called when user clicks Make O-You button **/
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), OYouMaker.class);
                 startActivity(intent);
