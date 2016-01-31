@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+
 /**
  * Created by michellenguyen on 1/29/16.
  */
@@ -15,6 +17,8 @@ public class OMeMaker extends MainActivity{
     // Initializing variables
     EditText inputName;
     EditText inputDebt;
+    public static ArrayList<Object> thevalue = new ArrayList<Object>(0);
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +38,9 @@ public class OMeMaker extends MainActivity{
 
                 //Sending data to another Activity
                 nextScreen.putExtra("name", inputName.getText().toString());
-                nextScreen.putExtra("debt", inputDebt.getText().toString());
+                //nextScreen.putExtra("dank", inputDebt.getText());
+                System.out.println(inputName.getText());
+                //nextScreen.putExtra("NAME_FIELD_DATA", inputName.getText());
 
                 Log.e("n", inputName.getText() + "." + inputDebt.getText());
 

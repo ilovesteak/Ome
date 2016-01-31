@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     //ArrayList<Payment> values;
     public static ArrayList<String> values = new ArrayList<String>(0);
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -42,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
         Button oMe = (Button) findViewById(R.id.button2);
         Button oYou = (Button) findViewById(R.id.button3);
         listView = (ListView)findViewById(R.id.list);
+        Bundle userData = getIntent().getExtras();
+        if(userData != null){
+            System.out.println("P I N G");
+            String key = "name";
+            System.out.println(userData.getString(key));
+            values.add(userData.getString(key));
+        }
+        //((ArrayAdapter) listView.getAdapter()).notifyDataSetChanged();
 
         //Defined Array values to show ListView
         //setValue();
@@ -69,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             /** Called when the user clicks the Make O-Me button **/
             public void onClick(View view) {
                 //Do something in response to the button
-                values.add("paulchen");
+                values.add("jhjhjhk");
                 ((ArrayAdapter) listView.getAdapter()).notifyDataSetChanged();
                 Intent intent = new Intent(getApplicationContext(), OMeMaker.class);
                 startActivity(intent);
@@ -87,6 +96,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void loadData(){
+
+    }
     /*
     public void setValue(){
         values = new String[5];
