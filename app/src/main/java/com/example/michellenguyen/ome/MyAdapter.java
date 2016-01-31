@@ -65,15 +65,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             Toast.makeText(contxt,"The Item Clicked is: "+getPosition(),Toast.LENGTH_SHORT).show();
 
             if(+getPosition() == 1) {
-                Intent intent = new Intent(v.getContext(), OMeMaker.class);
+                Intent intent = new Intent(v.getContext(), Profile.class);
                 v.getContext().startActivity(intent);
             } else if(+getPosition() == 2) {
-                Intent intent = new Intent(v.getContext(), OYouMaker.class);
+                Intent intent = new Intent(v.getContext(), Groups.class);
+                v.getContext().startActivity(intent);
+            }  else if(+getPosition() == 3) {
+                Intent intent = new Intent(v.getContext(), Search.class);
+                v.getContext().startActivity(intent);
+            }  else if(+getPosition() == 4) {
+                Intent intent = new Intent(v.getContext(), OMeList.class);
                 v.getContext().startActivity(intent);
             }
 
         }
-
     }
 
 
