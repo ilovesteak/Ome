@@ -38,7 +38,7 @@ public class OMeMaker extends MainActivity{
 
                 //Sending data to another Activity
                 nextScreen.putExtra("name", inputName.getText().toString());
-                //nextScreen.putExtra("dank", inputDebt.getText());
+                //nextScreen.putExtra("debt", inputDebt.getText());
                 System.out.println(inputName.getText());
                 //nextScreen.putExtra("NAME_FIELD_DATA", inputName.getText());
 

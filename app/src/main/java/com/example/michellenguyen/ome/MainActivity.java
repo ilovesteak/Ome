@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         Button oMe = (Button) findViewById(R.id.button2);
         Button oYou = (Button) findViewById(R.id.button3);
         listView = (ListView)findViewById(R.id.list);
+
+        //This bundles up the data
         Bundle userData = getIntent().getExtras();
         if(userData != null){
             System.out.println("P I N G");
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             /** Called when the user clicks the Make O-Me button **/
             public void onClick(View view) {
                 //Do something in response to the button
-                values.add("jhjhjhk");
+               // values.add("jhjhjhk");
                 ((ArrayAdapter) listView.getAdapter()).notifyDataSetChanged();
                 Intent intent = new Intent(getApplicationContext(), OMeMaker.class);
                 startActivity(intent);
