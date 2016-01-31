@@ -36,9 +36,10 @@ public class OMeMaker extends MainActivity{
                 nextScreen.putExtra("name", inputName.getText().toString());
                 nextScreen.putExtra("debt", inputDebt.getText().toString());
 
-                Log.e("n", inputName.getText()+"."+ inputDebt.getText());
+                Log.e("n", inputName.getText() + "." + inputDebt.getText());
 
                 startActivity(nextScreen);
+
 
             }
         });

@@ -29,8 +29,9 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     ListView listView;
-    String[] values;
+    //final String[] values;
     //ArrayList<Payment> values;
+    public static ArrayList<String> values = new ArrayList<String>(0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Defined Array values to show ListView
         //setValue();
-        values = new String[]{"txt1", "txt2", "txt3", "txt4"};
-
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, values);
@@ -70,8 +69,12 @@ public class MainActivity extends AppCompatActivity {
             /** Called when the user clicks the Make O-Me button **/
             public void onClick(View view) {
                 //Do something in response to the button
+                values.add("paulchen");
+                ((ArrayAdapter) listView.getAdapter()).notifyDataSetChanged();
                 Intent intent = new Intent(getApplicationContext(), OMeMaker.class);
                 startActivity(intent);
+
+
             }
         });
 
@@ -92,10 +95,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     */
-
+/*
     public void addPayment(Payment newPayment){
 
     }
+*/
 /*
     public void submitOMe(View view){
 
@@ -123,5 +127,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void addValue(String dank){
+        values.add(dank);
     }
 }
