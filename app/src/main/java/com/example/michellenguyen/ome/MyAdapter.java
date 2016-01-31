@@ -1,6 +1,7 @@
 package com.example.michellenguyen.ome;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,7 +61,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         @Override
         public void onClick(View v){
+            // Toast display for checking which option was clicked
             Toast.makeText(contxt,"The Item Clicked is: "+getPosition(),Toast.LENGTH_SHORT).show();
+
+            if(+getPosition() == 1) {
+                Intent intent = new Intent(v.getContext(), OMeMaker.class);
+                v.getContext().startActivity(intent);
+            } else if(+getPosition() == 2) {
+                Intent intent = new Intent(v.getContext(), OYouMaker.class);
+                v.getContext().startActivity(intent);
+            }
+
         }
 
     }
