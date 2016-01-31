@@ -32,8 +32,10 @@ public class OYouMaker extends MainActivity{
                 Intent nextScreen = new Intent(getApplicationContext(), MainActivity.class);
 
                 //Sending data to another Activity
+
                 nextScreen.putExtra("name", inputName.getText().toString());
-                nextScreen.putExtra("debt", inputDebt.getText().toString());
+                System.out.println(inputName.getText());
+                //nextScreen.putExtra("debt", inputDebt.getText().toString());
 
                 Log.e("n", inputName.getText()+"."+ inputDebt.getText());
 
