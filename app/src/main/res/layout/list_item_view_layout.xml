@@ -20,6 +20,7 @@
             android:layout_width="60dip"
             android:layout_height="60dip"
             android:src="@drawable/userpic" />
+
     </LinearLayout>
 
     <!-- Name-->
@@ -27,26 +28,52 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/list_image"
-        android:layout_marginLeft="75dip"
-        android:layout_centerVertical="true"
         android:paddingBottom ="10dip"
-        android:text="OWES NAME"
+        android:text="Owes Paul Chen"
         android:textColor="#040404"
         android:textSize="25dip"
         android:textStyle="bold"
-        android:typeface="sans" />
+        android:typeface="sans"
+        android:layout_alignTop="@+id/debt"
+        android:layout_toRightOf="@+id/userid"
+        android:layout_toEndOf="@+id/userid" />
     <!-- Information-->
     <TextView
         android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/name"
-        android:layout_alignLeft="@+id/name"
         android:paddingTop="5dip"
-        android:layout_centerHorizontal="true"
-        android:text="descripition"
+        android:text="For Steak"
         android:textColor="#343434"
-        android:textSize="15dip" />
+        android:textSize="15dip"
+        android:layout_above="@+id/userid"
+        android:layout_toRightOf="@+id/userid"
+        android:layout_toEndOf="@+id/userid" />
+
+    <!-- Total debt-->
+    <TextView
+        android:id="@+id/debt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom ="10dip"
+        android:text="$25.60"
+        android:textColor="#040404"
+        android:textSize="20dip"
+        android:textStyle="bold"
+        android:layout_above="@+id/info"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/userid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom ="10dip"
+        android:text="Michelle"
+        android:textStyle="bold"
+        android:textSize="17dip"
+        android:typeface="sans"
+        android:layout_below="@+id/thumbnail"
+        />
 
 </RelativeLayout>  
