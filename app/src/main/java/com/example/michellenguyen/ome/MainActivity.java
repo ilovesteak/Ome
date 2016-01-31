@@ -40,8 +40,11 @@ public class MainActivity extends AppCompatActivity {
     //First We Declare Titles And Icons For Our Navigation Drawer List View
     //This Icons And Titles Are holded in an Array as you can see
 
-    String TITLES[] = {"Home","Events","Mail","Shop","Travel"};
+    String TITLES[] = {"Profile", "Groups", "Search", "OMes"};
+    int ICONS[] = {R.drawable.ic_profiles,R.drawable.ic_groups,R.drawable.ic_search,R.drawable.ic_moneyc};
+    /* String TITLES[] = {"Home","Events","Mail","Shop","Travel"};
     int ICONS[] = {R.drawable.ic_home,R.drawable.ic_events,R.drawable.ic_mail,R.drawable.ic_shop,R.drawable.ic_travel};
+    */
 
     String NAME = "Dashboard";
     private Toolbar toolbar;
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView); // Assigning the RecyclerView Object to the xml View
         mRecyclerView.setHasFixedSize(true);                            // Letting the system know that the list objects are of fixed size
-        mAdapter = new MyAdapter(TITLES,ICONS,NAME);
+        mAdapter = new MyAdapter(TITLES,ICONS,NAME,this);
         mRecyclerView.setAdapter(mAdapter);                              // Setting the adapter to RecyclerView
         mLayoutManager = new LinearLayoutManager(this);                 // Creating a layout Manager
         mRecyclerView.setLayoutManager(mLayoutManager);                 // Setting the layout Manager
